@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Webcam Test v1.0 (c) 2020-2022 by Sensei</title>
+</head>
+<body>
+<h3>Webcam Test v1.0 (c) 2020-2022 by Sensei</h3>
+<video autoplay />
+<audio autoplay />
+<script>
+// The web browser will ask for permissions. To test the webcam feature on your laptop/computer, assign temporary or permanent permissions.
+
+// true to display webcam preview on the page, false to disable
+if( true ) {
+   const video_constrains = { video: true };
+   const video = document.querySelector( 'video' );
+   navigator.mediaDevices.getUserMedia( video_constrains ).then((stream)=> { video.srcObject = stream });
+}
+
+// true to hear the microphone, false to disable it
+if( true ) {
+   const audio_constrains = { audio: true };
+   const audio = document.querySelector( 'audio' );
+   navigator.mediaDevices.getUserMedia( audio_constrains ).then((stream)=> { audio.srcObject = stream });
+}
+</script>
+</body>
+</html>
